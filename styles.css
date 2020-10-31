@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+.dialog {
+  border: 1px solid red;
+  padding: 10px 15px;
+}
+.dialog .header {
+  border: 1px solid red;
+}
+.dialog .content {
+  border: 1px solid red;
+}
+.dialog.message-bar {
+  border: 1px solid red;
+}
