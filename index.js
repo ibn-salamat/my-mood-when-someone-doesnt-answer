@@ -81,7 +81,8 @@ const app = new Vue({
       currentMessage: null,
       seen: false,
       lastMessage: false,
-      disclaimer: true
+      disclaimer: true,
+      modalState: false
     };
   },
   methods: {
@@ -124,10 +125,11 @@ const app = new Vue({
           opacity--;
 
           if (opacity < 0) {
-            console.log(5);
             clearInterval(intervalId);
-            document.querySelector(".modal").classList.add("active")
-
+            this.$data.modalState = true
+            setTimeout(() => {
+              document.querySelector(".modal").classList.add("active")
+            }, 1000);
           }
         }, 50);
       }

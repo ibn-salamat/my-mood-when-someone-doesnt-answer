@@ -62,9 +62,8 @@ input {
   max-width: 640px;
 }
 .modal.active{
-  z-index: 10;
+  z-index: 100;
   opacity: 100%;
-
 }
 .modal p{
   color: #8e8e8e;
