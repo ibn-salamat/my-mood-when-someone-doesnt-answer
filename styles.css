@@ -3,29 +3,181 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  max-width: 640px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 img {
   max-width: 100%;
 }
 a {
   text-decoration: none;
-  color: unset;
+  color: #0095f6;
 }
 button,
 input {
   border: none;
   outline: none;
+  background: none;
+}
+
+
+.diclaimer{
+  background: #262626;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  z-index: 100;
+  color: #8e8e8e;
+}
+
+
+.modal{
+  background: #262626;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  opacity: 0%;
+  z-index: -1;
+  transition: 5s ease;
+}
+.modal.active{
+  z-index: 10;
+  opacity: 100%;
+
+}
+.modal p{
+  color: #8e8e8e;
+  width: 100%;
 }
 
 .dialog {
-  border: 1px solid red;
-  padding: 10px 15px;
+  /* border: 1px solid red; */
+  /* padding: 10px 15px; */
 }
+#today{
+  margin: 15px 0;
+  color: #8e8e8e;
+}
+.seen{
+  color: #8e8e8e;
+  font-size: 11px;
+}
+#mood-emoji{
+  font-size: 35px;;
+}
+header{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7px;
+  text-align: center;
+}
+header > p{
+  text-align: center;
+}
+header p.thought{
+  font-size: 14px;
+}
+
+/* dialog */
 .dialog .header {
-  border: 1px solid red;
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+.dialog .header .user {
+  display: flex;
+  align-items: center;
+}
+.dialog .header .user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dialog .header .user .email {
+  font-weight: 600;
+  margin-left: 10px;
+  color: #262626;
+}
+.dialog .header .info {
+  /* width: 50px;
+  height: 50px; */
 }
 .dialog .content {
-  border: 1px solid red;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 171px;
+  bottom: 60px;
+  width: 100%;
+  max-width: 640px;
+  border-top: 1px solid #dbdbdb;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.dialog.message-bar {
-  border: 1px solid red;
+.dialog .content .messages {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  list-style: none;
+  padding-right: 20px;;
+}
+.dialog .content .messages .message{
+  background: #efefef;
+  padding: 16px;
+  border-radius: 22px;
+  margin: 5px 0;
+  
+}
+.dialog .message-bar-wrap {
+  padding: 15px 10px;
+  position: fixed;
+  background: white;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  max-width: 640px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dialog .message-bar {
+  height: 30px;
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.start_btn,
+.dialog .message-bar button {
+  color: #0095f6;
+}
+.dialog .message-bar button:disabled {
+  /* color: beige; */
+  opacity: 0.3;
+}
+
+/* audios */
+.audios {
+  display: none;
 }
