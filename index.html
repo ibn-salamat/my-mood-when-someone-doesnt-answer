@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как тебе с этим живется??</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+
+        <div v-if="disclaimer" class="diclaimer">
+            <h3>Дисклеймер!</h3><br />
+            <p>Симулятор моего настроения.</p><br />
+            <p>Представь что это я когда я пишу тебе.</p><br />
+            <p>Я подобрал музыки по натроению. Так что постарайся вникнуть в атмосферу.</p><br />
+
+            <button class="start_btn" @click="start">гоу</button>
+        </div>
+        <div v-else>
+        <header>
+                <p><span id="mood-emoji">{{currentMood.title}}</span></p>
+                <p class="thought">
+                    {{currentMood.thought}}</p> 
+                </p>
+             
+        </header>
+
+        <div class="dialog">
+            <div class="header">
+                <div class="user">
+                    <img :src="receiver.avatarURL" />
+                    <div class="info">
+                        <!-- <div class="name">{{receiver.name}}</div> -->
+                        <div class="email">{{receiver.email}}</div>
+                    </div>
+                </div>
+
+                <svg aria-label="Посмотреть информацию о переписке" class="info" fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M24 48C10.8 48 0 37.2 0 24S10.8 0 24 0s24 10.8 24 24-10.8 24-24 24zm0-45C12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21S35.6 3 24 3z"></path><circle clip-rule="evenodd" cx="24" cy="14.8" fill-rule="evenodd" r="2.6"></circle><path d="M27.1 35.7h-6.2c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h6.2c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z"></path><path d="M24 35.7c-.8 0-1.5-.7-1.5-1.5V23.5h-1.6c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5H24c.8 0 1.5.7 1.5 1.5v12.2c0 .8-.7 1.5-1.5 1.5z"></path></svg>
+
+            
+            </div>
+            <div class="content">
+                <p id="today">Каждый раз</p>
+                <ul class="messages">
+                    <li  class="message" v-for="message in dialog" :key="message.id">
+                      {{ message.text }}
+                    </li>
+                    <p v-if="seen" class="seen">Просмотрено</p>
+                  </ul>
+            </div>
+           <div class="message-bar-wrap">
+            <div class="message-bar">
+                <input  v-on:keyup.enter="sendMessage" :disabled="lastMessage" :placeholder="lastMessage ? 'its farewell' : currentMessage.title" v-model="textMessage" />
+                <button :disabled="currentMessage.title !== textMessage" @click="sendMessage">Отправить</button>
+            </div>
+           </div>
+        </div>
+
+
+        <div class="modal">
+            <p>Ну вот.</p> <br />
+            <p>Я не придумал что писать тут.</p><br />
+            <p>it's not just goodbye.</p>
+            <br />
+            <p>maybe it's farewell my friend.</p>
+            <br />
+            <p>farewell forever.</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>made with 💔 by <a target="_blank" href="https://ibn-salamat.github.io/">NURLYKHAN</a> 
+                <br />  
+                for
+                <a target="_blank" href="https://www.instagram.com/sharbat_nm/">you</a> </p>
+            <!-- <p>p.s. .</p> -->
+        </div>
+    </div>
+    </div>
+
+
+    <div class="audios">
+        <audio id="music_1"  src="./assets/music/1.mpeg" loop></audio>
+        <audio id="music_2"  src="./assets/music/2.mpeg" loop></audio>
+        <audio id="music_3"  src="./assets/music/3.mpeg"loop ></audio>
+        <audio id="music_4"  src="./assets/music/4.mpeg" loop></audio>
+        <audio id="music_5"  src="./assets/music/5.mpeg" loop></audio>
+        <audio id="music_6"  src="./assets/music/6.mp3"loop ></audio>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+    
+
+
+</body>
+</html>
