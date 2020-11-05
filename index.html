@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Как тебе с этим живется??</title>
+    <title>nobody's gonna know</title>
     <link rel="stylesheet" href="styles.css"/>
+    
 </head>
 <body>
 
@@ -13,8 +14,8 @@
 
         <div v-if="disclaimer" class="diclaimer">
             <h3>Дисклеймер!</h3><br />
-            <p>Симулятор моего настроения.</p><br />
-            <p>Представь что это я когда я пишу тебе.</p><br />
+            <p>Симулятор моего настроения когда я пишу кому-то.</p><br />
+            <!-- <p>Представь что это я когда я пишу тебе.</p><br /> -->
             <p>Я подобрал музыки по натроению. Так что постарайся вникнуть в атмосферу.</p><br />
 
             <button class="start_btn" @click="start">гоу</button>
@@ -60,9 +61,10 @@
         </div>
 
 
-        <div class="modal">
-            <p>Ну вот.</p> <br />
-            <p>Я не придумал что писать тут.</p><br />
+        <div v-if="modalState" class="modal">
+            <p>Ну вот.</p>
+            <!-- <p>Я не придумал что писать тут.</p> -->
+            <br />
             <p>it's not just goodbye.</p>
             <br />
             <p>maybe it's farewell my friend.</p>
@@ -72,13 +74,10 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
             <p>made with 💔 by <a target="_blank" href="https://ibn-salamat.github.io/">NURLYKHAN</a> 
                 <br />  
                 for
-                <a target="_blank" href="https://www.instagram.com/sharbat_nm/">you</a> </p>
+                <a target="_blank" href="https://www.youtube.com/watch?v=bYKPAoWQJM8&ab_channel=%D0%9C%D0%B8%D0%BA%D0%BE%D0%A5%D0%B0%D0%BD">someone</a> </p>
             <!-- <p>p.s. .</p> -->
         </div>
     </div>
@@ -86,11 +85,11 @@
 
 
     <div class="audios">
-        <audio id="music_1"  src="./assets/music/1.mpeg" loop></audio>
-        <audio id="music_2"  src="./assets/music/2.mpeg" loop></audio>
-        <audio id="music_3"  src="./assets/music/3.mpeg"loop ></audio>
-        <audio id="music_4"  src="./assets/music/4.mpeg" loop></audio>
-        <audio id="music_5"  src="./assets/music/5.mpeg" loop></audio>
+        <audio id="music_1"  src="./assets/music/1.mp3" loop></audio>
+        <audio id="music_2"  src="./assets/music/2.mp3" loop></audio>
+        <audio id="music_3"  src="./assets/music/3.mp3"loop ></audio>
+        <audio id="music_4"  src="./assets/music/4.mp3" loop></audio>
+        <audio id="music_5"  src="./assets/music/5.mp3" loop></audio>
         <audio id="music_6"  src="./assets/music/6.mp3"loop ></audio>
     </div>
     

@@ -4,10 +4,9 @@ const app = new Vue({
     return {
       musicsList: [music_1, music_2, music_3, music_4, music_5, music_6],
       receiver: {
-        email: "sharbat_nm",
-        name: "Sharbat🍉",
-        avatarURL:
-          "https://instagram.fala5-1.fna.fbcdn.net/v/t51.2885-19/s150x150/71780110_365418301031153_3756607928723832832_n.jpg?_nc_ht=instagram.fala5-1.fna.fbcdn.net&_nc_ohc=WbxivdkDP0MAX-l3K-l&oh=1bbac01dc2e0bc476152d7dad21bd672&oe=5FC9296A",
+        email: "typical_girl",
+        name: "Типичная девушка🥰",
+        avatarURL:"https://img.sharetv.com/shows/characters/large/gravity_falls.wendy_corduroy.jpg"
       },
       moods: [
         {
@@ -81,7 +80,8 @@ const app = new Vue({
       currentMessage: null,
       seen: false,
       lastMessage: false,
-      disclaimer: true
+      disclaimer: true,
+      modalState: false
     };
   },
   methods: {
@@ -124,10 +124,11 @@ const app = new Vue({
           opacity--;
 
           if (opacity < 0) {
-            console.log(5);
             clearInterval(intervalId);
-            document.querySelector(".modal").classList.add("active")
-
+            this.$data.modalState = true
+            setTimeout(() => {
+              document.querySelector(".modal").classList.add("active")
+            }, 1000);
           }
         }, 50);
       }
